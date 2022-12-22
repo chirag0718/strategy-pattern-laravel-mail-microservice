@@ -51,8 +51,6 @@ class MailJetService implements MailInterface
     }
 }
 
-# returns 'phenomenon'
-foobar.singularize('phenomena')
 ```
 
 ## Author
