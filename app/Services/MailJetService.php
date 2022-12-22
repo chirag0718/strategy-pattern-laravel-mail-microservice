@@ -8,10 +8,11 @@ use App\Interfaces\MailInterface;
 class MailJetService implements MailInterface
 {
 
-    public function send(): void
+    public function send(): \Illuminate\Http\JsonResponse
     {
-        // TODO: Implement send() method.
-
+        return response()->json([
+            'message' => "MailJet called and email sent"
+        ]);
 
     }
 }

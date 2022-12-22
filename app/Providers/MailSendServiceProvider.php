@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Interfaces\MailInterface;
 use App\Services\MailJetService;
 use App\Services\SendGridService;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 
 class MailSendServiceProvider extends ServiceProvider
@@ -16,7 +17,8 @@ class MailSendServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(MailInterface::class, function ($app) {
+        Config::set('mailprovider.mail_provider', 'sendgrid');
+        $this->app->bind(MailInterface::class, function () {
             if (config('mailprovider.mail_provider') === 'sendgrid') {
                 return new SendGridService();
             }

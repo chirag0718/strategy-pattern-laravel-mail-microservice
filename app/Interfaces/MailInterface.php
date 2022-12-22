@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Interfaces;
-use Illuminate\Support\Facades\Mail;
+use Illuminate\Http\JsonResponse;
 
 /**
  * Mail Interface
@@ -13,5 +13,5 @@ interface MailInterface
      * method is responsible to send email
      * @return int
      */
-    public function send(): void;
+    public function send(): JsonResponse;
 }

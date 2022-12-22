@@ -17,4 +17,3 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
-Route::get('/mail', [\App\Http\Controllers\MailController::class, 'welcome']);

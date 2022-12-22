@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Interfaces\MailInterface;
 use App\Services\SendGridService;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Config;
 
 class MailController extends Controller
 {
@@ -15,8 +17,11 @@ class MailController extends Controller
         $this->mailInterface = $mailInterface;
     }
 
-    public function welcome(Request $request)
+    public function welcome(): JsonResponse
     {
-        $this->mailInterface->send();
+
+        // Default is mailjet and we can set sendgrid from above line.
+        return $this->mailInterface->send();
+
     }
 }

@@ -10,12 +10,12 @@ class SendGridService implements MailInterface
 {
     /**
      * Send email
-     * @return void
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function send(): void
+    public function send(): \Illuminate\Http\JsonResponse
     {
-        Mail::mailer('smtp')
-            ->to('chirag.patel0718@gmail.com')
-            ->send(new WelcomeEmail());
+        return response()->json([
+            'message' => "SendGrid called and email sent"
+        ]);
     }
 }
