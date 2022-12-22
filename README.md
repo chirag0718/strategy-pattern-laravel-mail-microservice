@@ -4,4 +4,5 @@
 
 ### Configuration
 Set the configuration file in mail
+
 ```Config::set('mailprovider.mail_provider', 'sendgrid');```
